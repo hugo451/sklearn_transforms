@@ -12,6 +12,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
     def transform(self, X):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
+        data = pd.DataFrame(data)
         # Retornamos um novo dataframe sem as colunas indesejadas
         return data.drop(labels=self.columns, axis='columns')
     
@@ -27,6 +28,7 @@ class DropUselessRows(BaseEstimator, TransformerMixin):
     def transform(self, X):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
+        data = pd.DataFrame(data)
         
         for i in range(0, len(data)):
             try:
