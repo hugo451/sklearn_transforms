@@ -28,7 +28,7 @@ class DropUselessRows(BaseEstimator, TransformerMixin):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
         
-        for i in range(0, len(data.index)):
+        for i in range(0, len(data)):
             try:
                 flag = 0
                 for column in self.columns:
